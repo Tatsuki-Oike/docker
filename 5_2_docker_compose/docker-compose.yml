@@ -15,7 +15,7 @@ services:
   python_container:
     build: .
     volumes:
-      - /Users/ooikeitsuki/Documents/youtube/Docker/3_sample_network:/tmp/
+      - ../3_sample_network:/tmp/
     depends_on:
       - db_container
     restart: always

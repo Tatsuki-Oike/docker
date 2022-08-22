@@ -14,7 +14,7 @@ services:
   httpd:
     build: .
     volumes:
-      - /Users/ooikeitsuki/Documents/youtube/Docker/6_1_lamp/src:/var/www/html
+      - ../6_1_lamp/src:/var/www/html
     ports:
       - "8080:80"
       
