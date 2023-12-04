@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+
+  db_container:
+    image: mysql
+    networks:
+      - sample_network
+    volumes:
+      - db_volume:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_USER: sample_user
+      MYSQL_PASSWORD: sample_password
+      
+  python_container:
+    image: original_image1
+    networks:
+      - sample_network
+    volumes:
+      - ../3_sample_network:/tmp/
+    depends_on:
+      - db_container
+    restart: always
+    stdin_open: true
+    tty: true
+    
+networks:
+  sample_network:
+  
+volumes:
+  db_volume:

@@ -1,0 +1,1 @@
+print("pythonの実行成功")
